@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour
 {
     [SerializeField]
     private GameObject towerPrefab;
+    [SerializeField]
+    private EnemySpawner enemySpawner;
 
     public void SpawnTower(Transform tileTransform)
     {
@@ -17,7 +18,9 @@ public class TowerSpawner : MonoBehaviour
 
         tile.IsBuildTower = true;
 
-        Instantiate(towerPrefab, tileTransform.position, Quaternion.identity);
+        GameObject clone = Instantiate(towerPrefab, tileTransform.position, Quaternion.identity);
+
+        clone.GetComponent<TowerWeapon>().Setup(enemySpawner);
     }
    
 }
