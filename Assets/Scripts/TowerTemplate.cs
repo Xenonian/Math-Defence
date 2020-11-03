@@ -4,6 +4,7 @@
 public class TowerTemplate : ScriptableObject
 {
     public GameObject towerPrefab;
+    public GameObject followTowerPrefab;
     public Weapon[] weapon;
 
     [System.Serializable]
