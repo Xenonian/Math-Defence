@@ -13,7 +13,7 @@ public class TowerSpawner : MonoBehaviour
     private SystemTextViewer systemTextViewer;
     private bool isOnTowerButton = false;
     private GameObject followTowerClone = null;
-
+   
     public void ReadyToSpawnTower()
     {
         if (isOnTowerButton==true)
@@ -60,6 +60,7 @@ public class TowerSpawner : MonoBehaviour
         Destroy(followTowerClone);
         StopCoroutine("OnTowerCancelSystem");
     }
+
     
     private IEnumerator OnTowerCancelSystem()
     {
